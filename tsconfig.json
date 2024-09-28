@@ -3,8 +3,16 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@shared/*": ["src/app/shared/*"],
+      "@features/*": ["src/app/features/*"],
+      "@envs/*": ["src/environments/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "strictPropertyInitialization": false, // Enable stricter checking of property initialization in classes.
     "outDir": "./dist/out-tsc",
-    "strict": true,
+    "strict": true, // Enable stricter type checking and error reporting.
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
