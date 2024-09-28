@@ -1,0 +1,30 @@
+<button (click)="hola()"> Hola</button>
+
+<mat-card>
+  <mat-card-content>
+    <h1>{{ title }}</h1>
+    <mat-divider></mat-divider>
+    <mat-form-field>
+      <mat-label>Result: </mat-label>
+      <input matInput placeholder="Result" type="number" [value]="result" disabled>
+      @if (operationSucceeded) {<mat-icon matSuffix color="primary">check</mat-icon>}
+      @else {<mat-icon matSuffix color="warn">close</mat-icon>}
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <form>
+      <mat-form-field>
+        <mat-label>Number 1: </mat-label>
+        <input matInput placeholder="Write a number" type="number" [(ngModel)]="num1" name="num1">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Number 2: </mat-label>
+        <input matInput placeholder="Write a number" type="number" [(ngModel)]="num2" name="num2">
+      </mat-form-field>
+      <button mat-flat-button color="primary" type="submit" (click)="sumar()">&plus;</button>
+      <button mat-flat-button color="warn" type="submit" (click)="restar()">&minus;</button>
+      <button mat-flat-button color="primary" type="submit" (click)="multiplicar()">&times;</button>
+      <button mat-flat-button color="warn" type="submit" (click)="dividir()">&divide;</button>
+    </form>
+  </mat-card-content>
+</mat-card>
