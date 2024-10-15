@@ -1,0 +1,40 @@
+{
+    "data": [
+        { 
+            "id": 1, 
+            "name": "Juan", 
+            "age": 44, 
+            "department": {
+                "departamento" : {
+                    "id": 2,
+                    "label": "Sales"
+                }
+            }, 
+            "salary": 5000 
+        },
+        { 
+            "id": 2, 
+            "name": "Maria", 
+            "age": 19, 
+            "department": {
+                "departamento" : {
+                    "id": 3,
+                    "label": "Admin"
+                }
+            },  
+            "salary": 6000 
+        },
+        { 
+            "id": 3, 
+            "name": "Pedro", 
+            "age": 32, 
+            "department": {
+                "departamento" : {
+                    "id": 1,
+                    "label": "Marketing"
+                }
+            }, 
+            "salary": 7000 
+        }
+    ]
+}
