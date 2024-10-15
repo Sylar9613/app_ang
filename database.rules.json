@@ -1,0 +1,6 @@
+{
+  "rules": {
+     ".read": "auth!==null",  // 2024-10-14
+     ".write": "auth!==null",  // default => now < 1728856800000 (2024-10-14)
+  }
+}
