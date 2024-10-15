@@ -58,7 +58,7 @@ export class CalculadoraComponent implements OnInit {
     }
   }
 
-  hola() {
+  goToEmployees() {
     this.router.navigate(['/empleados']);
   }
 }
