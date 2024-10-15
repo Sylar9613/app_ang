@@ -1,5 +1,25 @@
-<p>
-  home works!
-</p>
-
-<button (click)="hola()"> Hola</button>
+<br/>
+@if (isLoggedIn) {
+  <button mat-flat-button color="accent" (click)="goToEmployees()"> Go to Employees</button>
+  <br/><br />
+  <mat-card>
+    <mat-card-content>
+      <h1>Welcome!</h1>
+      <mat-slide-toggle (click)="toggleDarkMode()">Toggle me!</mat-slide-toggle>  
+      <br /><br />
+      <mat-divider></mat-divider>
+      <br />
+      <mat-card-actions>
+        <section>
+          <h2>User: {{ user.name }}</h2>
+          <h2>Email: {{ user.email }}</h2>
+          <h2>Role: {{ user.role }}</h2>
+          <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+        </section>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+}
+@else {
+  <p>Please login to see this content.</p>
+}

@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { LoginService } from '../login/login.service';
 
 @Component({
   standalone: true,
@@ -12,18 +13,24 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatToolbarModule, MatButtonModule, RouterModule, MatIconModule]
 })
 export class HeaderComponent implements OnInit {
-  userIsAuthenticated: boolean = false; // Simulate authentication status
+  token: string = '';
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    let token = this.loginService.getIdToken();
+    if (token) {
+      this.token = token;
+    } else {
+      this.token = '';
+    }
   }
 
   onLogout() {
-    this.userIsAuthenticated = false; // Simulate logging out
+    this.loginService.logout();
   }
 
-  Login() {
-    this.userIsAuthenticated = true; // Simulate logging in
+  isLoggedIn() {
+    return this.loginService.isLoggedIn();
   }
 }

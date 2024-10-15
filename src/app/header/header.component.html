@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <span>
     <a mat-button routerLink="/">
       <mat-icon class="items-center" matSuffix>home</mat-icon> Home
@@ -7,16 +7,15 @@
   <span class="spacer"></span>
   <div class="buttons-row">
     <div class="buttons-container">
-      @if (userIsAuthenticated) {
+      @if (isLoggedIn()) {
+        <a class="buttons" mat-button routerLink="empleados" routerLinkActive="mat-accent">Empleados</a>
         <a class="buttons" mat-button routerLink="calculadora" routerLinkActive="mat-warn">Calculadora</a>
-        <a class="buttons" mat-button routerLink="statistics" routerLinkActive="mat-accent">Statistics</a>
-        <a class="buttons" mat-button routerLink="/calendar" routerLinkActive="mat-accent">Calendar</a>
         <a class="buttons" mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
-        <button class="buttons" mat-button (click)="onLogout()">Logout <mat-icon matSuffix color="primary">logout</mat-icon></button>
+        <button class="buttons" mat-button (click)="onLogout()">Logout <mat-icon matSuffix>logout</mat-icon></button>
       }
       @else {
-          <a class="buttons" mat-button routerLink="login" routerLinkActive="primary"><mat-icon matSuffix color="warn">login</mat-icon> Login</a>
-          <a class="buttons" mat-button routerLink="empleados" routerLinkActive="mat-warn"><mat-icon matSuffix color="warn">key</mat-icon> Signup</a>
+          <a class="buttons" mat-button routerLink="login" routerLinkActive="primary"><mat-icon matSuffix>login</mat-icon> Login</a>
+          <a class="buttons" mat-button routerLink="/signup" routerLinkActive="mat-warn"><mat-icon matSuffix>key</mat-icon> Signup</a>
         }
     </div>     
   </div>
